@@ -14,6 +14,25 @@ class StageTest extends spock.lang.Specification {
         expect:
         stage.run() == "Joe"
     }
+    def "use global GroovySpy static with param any params"() {
+        given:
+        GroovySpy(Step, global: true) {}
+        when:
+        def x = Step.staticMethod('B')
+        then:
+        x == stubbed
+        1 * Step.staticMethod2 (*_ )>> "stubbed"
+
+    }
+    def "use global GroovySpy static with param"() {
+        given:
+        GroovySpy(Step, global: true) {}
+        Step.staticMethod2('A') >> "stubbed"
+        expect:
+        Step.staticMethod2('A') == "stubbed"
+        Step.staticMethod2('B') == "B"
+    }
+
 
     def "use global GroovySpy"() {
         given:
@@ -22,9 +41,9 @@ class StageTest extends spock.lang.Specification {
         }
         Step.staticMethod() >> "stubbed"
         def stage = new Stage("John")
-
         expect:
         Step.staticMethod() == "stubbed"
+
         stage.run() == "Joe"
     }
 

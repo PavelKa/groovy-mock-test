@@ -14,4 +14,8 @@ class Step {
     static String staticMethod() {
         return "original"
     }
+
+    static String staticMethod2(param) {
+        return param
+    }
 }

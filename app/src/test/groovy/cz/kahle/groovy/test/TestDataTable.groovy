@@ -1,9 +1,6 @@
 package cz.kahle.groovy.test
 
-import groovy.sql.Sql
-import spock.lang.Shared
 import spock.lang.Specification
-
 
 class TestDataTable extends Specification {
 
@@ -28,22 +25,6 @@ class TestDataTable extends Specification {
               testCases
         }.call()
         (result, issueType, issueState) = row
-
-
-
-//        result|issueType|issueState
-//        'a'|'b'|'c'
-
-        //
-
-
-//        bug deployed  ok
-//        bug validated ok
-//        bug deleted   ok
-//        defect deployed  ok
-//        defect validated ok
-//        defect deleted   ok
-
 
     }
 
