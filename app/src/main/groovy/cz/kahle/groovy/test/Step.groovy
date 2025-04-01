@@ -34,10 +34,10 @@ class Step {
             }
         }
         if (max == null) {
-            steps.rbrLog.warn(logParams, "Maximální počet instancí pro $deployerInstance není definován, použije se defaultní hodnota $maxDefault")
+           println("Maximální počet instancí pro $deployerInstance není definován, použije se defaultní hodnota $maxDefault")
             max = maxDefault
         } else {
-            steps.rbrLog.info(logParams, "Maximální počet instancí pro $deployerInstance načten z konfigurace, hodnota: $maxDefault")
+            println( "Maximální počet instancí pro $deployerInstance načten z konfigurace, hodnota: $maxDefault")
         }
         return max
     }
