@@ -9,3 +9,4 @@
 
 rootProject.name = 'groovy-mock-test'
 include('app')
+include('app-groovy-2-5')
